@@ -17,4 +17,8 @@ contract MyToken is ERC20 {
 
         _mint(account, value);
     }
+
+    function burn(uint256 value) external {
+        _burn(msg.sender, value);
+    }
 }
