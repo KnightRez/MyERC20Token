@@ -19,6 +19,9 @@ contract MyToken is ERC20 {
     }
 
     function burn(uint256 value) external {
+        //Check if there is enough balance
+        require(balanceOf(msg.sender) >= value, "Not Enough Tokens to Burn");
+        
         _burn(msg.sender, value);
     }
 
